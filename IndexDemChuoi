@@ -1,0 +1,20 @@
+//Câu 1: Cho chuỗi “Hello every one”, thực hiện:
+//Ký tự e xuất hiện bao nhiêu lần và có index là bao nhiêu
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        String str = "Hello every one";
+        char targetChar = 'e';
+
+        int count = 0;
+        System.out.println("Các vị trí của ký tự '" + targetChar + "' trong chuỗi:");
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == targetChar) {
+                System.out.println("Index: " + i);
+                count++;
+            }
+        }
+        System.out.println("Tổng số lần xuất hiện của ký tự '" + targetChar + "' là: " + count);
+    }
+}
