@@ -1,0 +1,30 @@
+//Câu 2: Nhập 1 chuỗi bất kỳ và kiểm tra xem chuỗi đó có là chuỗi palindrome (Chuỗi đảo nghịch) không
+//VD: acbbca là chuỗi đảo nghịch
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập chuỗi để kiểm tra xem có là chuỗi palindrome(chuỗi đảo nghịch) không:");
+        String str = scanner.nextLine();
+        if (isPalindrome(str)) {
+            System.out.println("Chuỗi '" + str + "' là chuỗi palindrome(chuỗi đảo nghịch).");
+        } else {
+            System.out.println("Chuỗi '" + str + "' không là chuỗi palindrome(chuỗi đảo nghịch).");
+        }
+        scanner.close();
+    }
+
+    // Hàm kiểm tra chuỗi palindrome
+    public static boolean isPalindrome(String str) {
+        int i = 0, j = str.length() - 1;
+        while (i < j) {
+            if (str.charAt(i) != str.charAt(j)) {
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+}
