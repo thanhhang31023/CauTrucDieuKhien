@@ -1,3 +1,7 @@
+// Nhập vào một số N dương. Kiểm tra xem N có phải là số hoàn hảo không.
+// Số hoàn hảo là số có tổng các ước (Không phải nó) = chính nó.
+// Ví dụ: N = 6 có ước là 1, 2, 3, 6 nhưng tổng các ước (không phải nó) là: 1+2+3 = 6 = N khi này 6 được gọi là số hoàn hảo.
+
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
