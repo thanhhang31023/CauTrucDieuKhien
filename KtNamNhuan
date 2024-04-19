@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.printf("nhap nam:");
+        int n = sc.nextInt();
+        // năm nhuận là năm chia hết cho 4 nhưng không chia hết  cho 100 hoặc năm đó chia hết cho 400
+           if ( (n%4 ==0 && n%100 !=0) || n %400 ==0 ){
+            System.out.printf(" %d la nam nhuan" , n);
+        }
+        else {
+            System.out.println(" Khong phai nam nhuan");
+        }
+    }
+}
