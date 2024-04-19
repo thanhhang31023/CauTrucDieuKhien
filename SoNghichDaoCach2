@@ -1,0 +1,33 @@
+//Nhập 1 số N. Hiển thị số nghịch đảo của N. (Vẽ sơ đồ khối + code).
+//Ví dụ: 123456 -> 654321; 120 -> 21
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập số N:");
+        int n = scanner.nextInt();
+
+        // Chuyển số N thành chuỗi
+        String nChuoi = Integer.toString(n);
+
+        // Khởi tạo chuỗi để lưu số nghịch đảo
+        String soNghichDaoChuoi = "";
+
+        // Lặp để xây dựng số nghịch đảo
+        for (int i = nChuoi.length() - 1; i >= 0; i--) {         // length -1 là vì phần charAt(i) lấy vị trí kí tự tính vị trí từ 0,1,2,3...
+            // Lấy từng ký tự của chuỗi N
+            char chuSo = nChuoi.charAt(i);
+            // Thêm ký tự vào chuỗi số nghịch đảo
+            soNghichDaoChuoi += chuSo;
+        }
+
+        // Chuyển số nghịch đảo từ chuỗi thành số nguyên
+        int soNghichDao = Integer.parseInt(soNghichDaoChuoi);
+
+        // Hiển thị số nghịch đảo
+        System.out.println("Số nghịch đảo của N là: " + soNghichDao);
+
+        scanner.close();
+    }
+}
