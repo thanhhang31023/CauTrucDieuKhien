@@ -1,0 +1,38 @@
+/*
+Nhập vào 1 số N tính tổng các số chẵn từ 1 đến N.
+Nhập vào 1 số N tính tổng các số lẽ từ 1 đến N.
+Nhập vào 1 số N tính tích các số chẵn và lẻ.*/
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập vào số N :");
+        int N = scanner.nextInt();
+
+        int tongChan = 0;
+        int tongLe = 0;
+        int tichChan = 1;
+        int tichLe = 1;
+
+        if (N==1){
+            tichChan -=1;     // N = 1 thì tích chẵn = 0
+        }
+        for (int i = 1; i <= N; i++) {
+            if (i % 2 == 0) {
+                tongChan += i;
+                tichChan *= i;
+            } else {
+                tongLe += i;
+                tichLe *= i;
+            }
+                }
+        System.out.println("Tổng các số chẵn từ 1 đến " + N + " là: " + tongChan);
+        System.out.println("Tổng các số lẻ từ 1 đến " + N + " là: " + tongLe);
+        System.out.println("Tích các số chẵn từ 1 đến " + N + " là: " + tichChan);
+        System.out.println("Tích các số lẻ từ 1 đến " + N + " là: " + tichLe);
+
+      }
+}
+
+
