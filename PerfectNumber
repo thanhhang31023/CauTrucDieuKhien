@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập vào số N: ");
+        int N = scanner.nextInt();
+        int sum = 1;            // sum là tổng các ước của N,trong đó N luôn có ước là 1
+        for (int i = 2; i * i <= N; i++) {          // Ước của N luôn nhỏ hơn hoặc bằng căn bậc 2 của N
+            if (N % i == 0) {
+                if(i * i != N)
+                    sum = sum + i + N / i;        // khi N chia hết i thì cả i và N/i đều là ước của N
+                else
+                    sum = sum + i;
+            }
+        }
+        if (sum == N && N != 1) {           // vì N =1 có ước là chính nó
+            System.out.println(N + " là số hoàn hảo.");
+        } else {
+            System.out.println(N + " không phải là số hoàn hảo.");
+        }
+    }
+}
