@@ -1,0 +1,28 @@
+// Nhập 1 số N. Đếm xem N có bao nhiêu ước và tính tổng các ước đó.
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập số N:");
+        int n = scanner.nextInt();
+
+        int demUoc = 0;
+        int tongUoc = 0;
+
+        System.out.print("Các ước của N là: " );
+
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                demUoc++; 
+                tongUoc += i; 
+                System.out.print( i + " ");
+            }
+        }     
+        System.out.println("");
+        System.out.println("Số lượng ước của N là: " + demUoc );
+        System.out.println("Tổng các ước của N là: " + tongUoc);
+
+        scanner.close();
+    }
+}
