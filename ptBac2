@@ -1,0 +1,40 @@
+//giải phương trình bậc hai có dạng (ax^2 + bx + c = 0)
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập vào số a: ");
+        double a = scanner.nextDouble();
+        System.out.print("Nhập vào số b: ");
+        double b = scanner.nextDouble();
+        System.out.print("Nhập vào số c: ");
+        double c = scanner.nextDouble();
+
+        if (a == 0) {
+            if (b == 0) {
+                if (c == 0) {
+                    System.out.println("Phương trình vô số nghiệm.");
+                } else {
+                    System.out.println("Phương trình vô nghiệm.");
+                }
+            } else {
+                double x = -c / b;
+                System.out.printf("Phương trình có một nghiệm: x = %.2f",x);
+            }
+        } else {
+            double dt = b * b - 4 * a * c;
+            if (dt < 0) {
+                System.out.println("Phương trình vô nghiệm.");
+            } else if (dt == 0) {
+                double x = -b / (2 * a);
+                System.out.printf("Phương trình có nghiệm kép x1 = x2 = %.2f", x);
+            } else {
+                double x1 = (-b + Math.sqrt(dt)) / (2 * a);
+                double x2 = (-b - Math.sqrt(dt)) / (2 * a);
+                System.out.printf("Phương trình có hai nghiệm phân biệt: x1 = %.2f, x2 = %.2f", x1,x2);
+            }
+        }
+    }
+}
+
