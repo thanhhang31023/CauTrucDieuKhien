@@ -20,21 +20,25 @@ public class Main {
                 }
             } else {
                 double x = -c / b;
-                System.out.printf("Phương trình có một nghiệm: x = %.2f",x);
+                System.out.printf("Phương trình có một nghiệm: x = -%.0f/%.0f => x = %.2f", c, b,x);
             }
         } else {
-            double dt = b * b - 4 * a * c;
-            if (dt < 0) {
+            double delta = b * b - 4 * a * c;
+            if (delta < 0) {
                 System.out.println("Phương trình vô nghiệm.");
-            } else if (dt == 0) {
+            } else if (delta == 0) {
                 double x = -b / (2 * a);
                 System.out.printf("Phương trình có nghiệm kép x1 = x2 = %.2f", x);
             } else {
-                double x1 = (-b + Math.sqrt(dt)) / (2 * a);
-                double x2 = (-b - Math.sqrt(dt)) / (2 * a);
+                double x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                double x2 = (-b - Math.sqrt(delta)) / (2 * a);
                 System.out.printf("Phương trình có hai nghiệm phân biệt: x1 = %.2f, x2 = %.2f", x1,x2);
             }
         }
     }
 }
+
+
+
+
 
