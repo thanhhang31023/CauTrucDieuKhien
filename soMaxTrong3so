@@ -1,0 +1,26 @@
+// nhập 3 số, in ra số lớn nhất
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập vào số a: ");
+        double a = scanner.nextDouble();
+        System.out.print("Nhập vào số b: ");
+        double b = scanner.nextDouble();
+        System.out.print("Nhập vào số c: ");
+        double c = scanner.nextDouble();
+
+        double max = a;   // Giả sử 'a' là số lớn nhất
+
+        if (b > max) {    
+            max = b;
+        }
+
+        if (c > max) { 
+            max = c;
+        }
+
+        System.out.println("Số lớn nhất là: " + max);
+    }
+}
