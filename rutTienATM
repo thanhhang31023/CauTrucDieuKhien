@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập số tiền cần rút (bội số của 50.000 đồng): ");
+        int soTien = scanner.nextInt();
+
+        // Mảng chứa các mệnh giá tiền
+        int[] MenhGia = {500000, 200000, 100000, 50000};
+
+        // Đếm số tờ tiền của từng mệnh giá
+        int[] dem = new int[MenhGia.length];
+
+        // Tính số tờ tiền ít nhất cần trả cho khách
+        for (int i = 0; i < MenhGia.length; i++) {
+            dem[i] = soTien / MenhGia[i];
+            soTien %= MenhGia[i];
+        }
+
+        System.out.println("Số tờ tiền ít nhất cần trả cho khách:");
+        for (int i = 0; i < MenhGia.length; i++) {
+            System.out.println(MenhGia[i] + " đồng: " + dem[i] + " tờ");
+        }
+    }
+    }
+
+
