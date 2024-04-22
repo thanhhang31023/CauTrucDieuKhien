@@ -1,0 +1,17 @@
+// nhập a,b , in ra số lớn hơn
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập vào số a: ");
+        double a = scanner.nextDouble();
+        System.out.print("Nhập vào số b: ");
+        double b = scanner.nextDouble();
+        if (a > b) {
+            System.out.println("Số lớn hơn là số a: " + a);
+        } else {
+            System.out.println("Số lớn hơn là số b: " + b);
+        }
+    }
+}
