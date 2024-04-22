@@ -1,0 +1,16 @@
+// nhập n và tính căn bậc 3 của n
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Nhập số n: ");
+        int n = scanner.nextInt();
+
+        double kq = Math.cbrt(n);
+        //  phương thức Math.cbrt() để tính căn bậc ba của n
+
+        System.out.println("Căn bậc ba của " + n + " là: " + kq);
+    }
+}
