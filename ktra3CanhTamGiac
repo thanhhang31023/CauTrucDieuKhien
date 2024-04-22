@@ -1,3 +1,6 @@
+//Nhập vào 3 cạnh a,b,c. Kiểm tra 3 cạnh tạo thành tam giác đều, tam giác vuông cân, tam giác cân, tam giác vuông hay tam giác thường.
+
+
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
