@@ -1,3 +1,9 @@
+//Viết chương trình tìm số lượng các tờ tiền ít nhất để trả cho khách tại điểm rút tiền ATM.
+// Biết rằng số tiền mà khách hàng rút không vượt quá 20 triệu đồng, và là bội số của 50.000
+// (Giả sử tài khoản của khách hàng luôn đủ tiền để rút)
+// Lưu ý: các mệnh giá tiền chỉ có thể có là 500.000, 200.000, 100.000 và 50.000//
+
+
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
