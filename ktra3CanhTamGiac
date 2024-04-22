@@ -1,0 +1,41 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        double a = Math.sqrt(3);       // √3
+        double b = Math.sqrt(4);       // √4
+        double c = Math.sqrt(7);       // √7
+
+        double binhPhuongA = a * a;
+        double binhPhuongB = b * b;
+        double binhPhuongC = c * c;
+
+        if (a + b > c && a + c > b && b + c > a) {     // ktra có thỏa mãn là 3 cạnh tam giác không.
+            if (a == b && b == c) {
+                System.out.println("Đây là tam giác đều");
+            } else if (a == b || b == c || c == a) {
+                if (Math.abs(binhPhuongA + binhPhuongB - binhPhuongC) < 0.0001 || Math.abs(binhPhuongA + binhPhuongC - binhPhuongB) < 0.0001 || Math.abs(binhPhuongB + binhPhuongC - binhPhuongA) < 0.0001) {
+                    System.out.println("Tam giác vuông cân.");
+                } else {
+                    System.out.println("Đây là tam giác cân");
+                }
+
+           // Định lý Py-ta-go : (a bình phương + b bình = c bình)
+           // do sự hạn chế về độ chính xác của số thực trong máy tính, không thể so sánh hai số thực trực tiếp bằng toán tử ==.
+           // Thay vào đó, chúng ta sử dụng hàm Math.abs() để lấy giá trị tuyệt đối của sự chênh lệch giữa hai giá trị
+           //  và so sánh với một ngưỡng rất nhỏ (0.0001 ở đây) để xem xét sự chính xác của tính toán.
+           // Nếu sự chênh lệch nhỏ hơn ngưỡng này, ta coi như hai giá trị gần bằng nhau.
+
+
+            } else if (Math.abs(binhPhuongA + binhPhuongB - binhPhuongC) < 0.0001 || Math.abs(binhPhuongA + binhPhuongC - binhPhuongB) < 0.0001 || Math.abs(binhPhuongB + binhPhuongC - binhPhuongA) < 0.0001) {
+                System.out.println("Đây là tam giác vuông");
+            } else {
+                System.out.println("Đây là tam giác thường");
+            }
+        } else {
+            System.out.println("3 cạnh trên không tạo thành tam giác");
+        }
+
+    }
+    }
+
+
