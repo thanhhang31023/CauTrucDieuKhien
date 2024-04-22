@@ -1,0 +1,80 @@
+//Nhập 3 số a,b,c từ bàn phím. Viết chương trình kiểm tra xem bộ 3 số này theo thứ tự có phải là ngày/tháng/năm không. 
+// Nếu đúng thì in ra ngày tiếp theo của ngày đó. Nếu không thì in ra thông báo là ba số nhập vào không phải là ngày tháng năm.
+//Chú ý: cần kiểm tra cụ thể về tính hợp lệ của ngày tháng. Tháng nào có 31 ngày, tháng nào có 30 ngày. Tháng 2 năm nhuận và không nhuận…
+
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Nhập ngày: ");
+        int day = input.nextInt();
+
+        System.out.print("Nhập tháng: ");
+        int month = input.nextInt();
+
+        System.out.print("Nhập năm: ");
+        int year = input.nextInt();
+
+        // Kiểm tra tính hợp lệ của ngày, tháng, năm
+        if (month < 1 || month > 12) {
+            System.out.println("Ba số nhập vào không phải là ngày tháng năm.");
+            return;
+        }
+
+        if (year < 1) {
+            System.out.println("Ba số nhập vào không phải là ngày tháng năm.");
+            return;
+        }
+
+        int maxDay = 0;
+
+        switch (month) {
+            case 2:  // ktra năm nhuận hay không
+                // năm nhuận là năm chia hết cho 4 nhưng không chia hết cho 100 hoặc năm đó chia hết cho 400
+                if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+                    maxDay = 29;
+                } else {
+                    maxDay = 28;
+                }
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                maxDay = 30;
+                break;
+            default:
+                maxDay = 31;
+                break;
+        }
+
+        if (day < 1 || day > maxDay) {
+            System.out.println("Ba số nhập vào không phải là ngày tháng năm.");
+            return;
+        }
+
+        // Tính ngày tiếp theo
+        int nextDay = day + 1;
+        int nextMonth = month;
+        int nextYear = year;
+
+        if (nextDay > maxDay) {
+            nextDay = 1;
+            nextMonth += 1;
+
+            if (nextMonth > 12) {
+                nextMonth = 1;
+                nextYear += 1;
+            }
+        }
+
+        System.out.printf("Ngày tiếp theo là: %d/%d/%d\n", nextDay, nextMonth, nextYear);
+    }
+}
+
+
+
+
+
