@@ -1,0 +1,36 @@
+//Viết chương trình Java xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ. Nếu:
+//Điểm trung bình >= 9.0 là hạng A.
+//Điểm trung bình >=7.0 và < 9.0 là hạng B
+//Điểm trung bình >=5.0 và < 7.0 là hạng C
+//Điểm trung bình <5.0 là hạng F
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Nhập điểm bài kiểm tra: ");
+        double diemKT = scanner.nextDouble();
+
+        System.out.print("Nhập điểm thi giữa kỳ: ");
+        double diemGK = scanner.nextDouble();
+
+        System.out.print("Nhập điểm thi cuối kỳ: ");
+        double diemCk = scanner.nextDouble();
+
+        double diemTB = (diemKT + diemGK + diemCk) / 3;
+
+        String hocLuc;
+        if (diemTB >= 9.0) {
+            hocLuc = "A";
+        } else if (diemTB >= 7.0) {
+            hocLuc = "B";
+        } else if (diemTB >= 5.0) {
+            hocLuc = "C";
+        } else {
+            hocLuc = "F";
+        }
+
+        System.out.println("Hạng học lực của bạn là: " + hocLuc);
+    }
+}
