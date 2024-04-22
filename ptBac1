@@ -17,7 +17,7 @@ public class Main {
             }
         } else {
             double x = -b / a;
-            System.out.println("Nghiệm của phương trình là: " + x);
+            System.out.printf("Nghiệm của phương trình là: x = -%.0f/%.0f => x = %.2f", b, a,x);
         }
     }
 }
