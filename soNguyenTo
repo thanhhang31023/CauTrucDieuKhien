@@ -3,27 +3,7 @@
 
 import java.util.Scanner;
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Nhập vào số N: ");
-        int N = scanner.nextInt();
-
-        if (isPrime(N)) {
-            System.out.println(N + " là số nguyên tố.");
-        } else {
-            System.out.println(N + " không phải là số nguyên tố.");
-        }
-
-        System.out.println("Các số nguyên tố từ 1 đến " + N + " là: ");
-        for (int i = 2; i <= N; i++) {
-            if (isPrime(i)) {
-                System.out.print(i + " ");
-            }
-        }
-    }
-
-    // Hàm kiểm tra số nguyên tố
-    public static boolean isPrime(int num) {
+      public static boolean soNguyenTo(int num) {
         if (num <= 1) {           // SNT luon lon hon 1
             return false;
         }
@@ -33,5 +13,23 @@ public class Main {
             }
         }
         return true;
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập vào số N: ");
+        int N = scanner.nextInt();
+
+        if (soNguyenTo(N)) {
+            System.out.println(N + " là số nguyên tố.");
+        } else {
+            System.out.println(N + " không phải là số nguyên tố.");
+        }
+
+        System.out.println("Các số nguyên tố từ 1 đến " + N + " là: ");
+        for (int i = 2; i <= N; i++) {
+            if (soNguyenTo(i)) {
+                System.out.print(i + ", ");
+            }
+        }
     }
 }
